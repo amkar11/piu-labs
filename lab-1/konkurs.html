@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lab 1</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/konkurs.css" />
+  </head>
 
+  <body>
+    <input type="checkbox" id="themeToggleCheckbox" hidden />
+
+    <div class="container">
+      <div class="titleAndIcon">
+        <h1>Zgłoszenie<br />konkursu plastycznego</h1>
+
+        <label
+          for="themeToggleCheckbox"
+          class="theme-toggle"
+          aria-label="Zmień motyw"
+        >
+          <span id="moonIcon">🌗</span>
+          <span class="tooltip">Zmień motyw</span>
+        </label>
+      </div>
+      <form action="https://httpbin.org/get" method="get">
+        <label for="username">Imię</label>
+        <input
+          id="username"
+          type="text"
+          name="username"
+          maxlength="30"
+          required
+        />
+
+        <label for="surname">Nazwisko</label>
+        <input
+          id="surname"
+          type="text"
+          name="surname"
+          maxlength="50"
+          required
+        />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required />
+
+        <label for="city">Miasto</label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          placeholder="Wpisz lub wybierz"
+          list="cities"
+          required
+        />
+
+        <datalist id="cities">
+          <option value="Warszawa"></option>
+          <option value="Kraków"></option>
+          <option value="Gdańsk"></option>
+          <option value="Poznań"></option>
+          <option value="Wrocław"></option>
+        </datalist>
+
+        <label for="birthday">Data urodzenia</label>
+        <input id="birthday" type="date" name="birthday" required />
+
+        <label for="projectsCount">Liczba zgłaszanych prac (od 1 do 6)</label>
+        <input
+          id="projectsCount"
+          type="number"
+          name="projectsCount"
+          min="1"
+          max="6"
+          required
+        />
+
+        <label for="color">Kolor wiodący prac</label>
+        <input id="color" type="color" name="color" value="yellow" required />
+
+        <label for="category">Kategoria pracy:</label>
+        <select id="category" name="category" required>
+          <option value="category" selected>-- wybierz kategorię --</option>
+          <option value="drawing">Rysunek</option>
+          <option value="painting">Malarstwo</option>
+          <option value="digitalGraphics">Grafika cyfrowa</option>
+        </select>
+
+        <fieldset>
+          <legend>Publikacja pracy online:</legend>
+          <div class="radio-fieldset">
+            <input
+              type="radio"
+              name="drone"
+              id="yes"
+              value="Tak"
+              checked
+              required
+            />
+            <label for="yes">Tak</label>
+          </div>
+          <div class="radio-fieldset">
+            <input type="radio" name="drone" id="no" value="Nie" required />
+            <label for="no">Nie</label>
+          </div>
+        </fieldset>
+
+        <div class="rules">
+          <input id="rules" type="checkbox" name="rules" required />
+          <label for="rules" id="rulesCheckbox"
+            >Zgadzam się na regulamin konkursu</label
+          >
+        </div>
+        <button type="submit">Wyślij zgłoszenie</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 40px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+#themeToggleCheckbox:checked ~ .container form {
+  background: #1b1b1b;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.9);
+}
+
+#themeToggleCheckbox:checked ~ .container form label {
+  color: #e0e0e0;
+}
+
+#themeToggleCheckbox:checked
+  ~ .container
+  form
+  input:not([type='checkbox']):not([type='radio']),
+#themeToggleCheckbox:checked ~ .container form select {
+  background: #3a3a3a;
+  color: #ffffff;
+  border-color: #000;
+}
+
+#themeToggleCheckbox:checked ~ .container form input:focus,
+#themeToggleCheckbox:checked ~ .container form select:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.5);
+}
+
+#themeToggleCheckbox:checked ~ .container fieldset {
+  border-color: #444;
+}
+
+#themeToggleCheckbox:checked ~ .container form fieldset legend {
+  color: #ffffff;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+.theme-toggle {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 32px;
+}
+
+.theme-toggle .tooltip {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.theme-toggle:hover .tooltip {
+  opacity: 1;
+}
+
+#moonIcon {
+  transition: opacity 0.3s ease;
+  font-size: 32px;
+}
+
+#moonIcon:hover {
+  opacity: 0.8;
+}
+
+form {
+  width: 500px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+}
+
+label:not(#rulesCheckbox):not(fieldset label) {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.titleAndIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 60px;
+}
+
+input:not([type='checkbox']):not([type='radio']),
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #777;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-radius 0.5s ease, border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+input:focus,
+select:focus,
+select:hover,
+input[type='date']:hover,
+input[type='color']:hover {
+  outline: none;
+  border-color: #4caf50;
+  border-radius: 5px;
+  box-shadow: 0 0 0 2px rgba(19, 201, 25, 0.3);
+}
+
+input[type='color'] {
+  padding: 2px;
+  height: 40px;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 18px;
+  border-radius: 5px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+fieldset label {
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+
+input[type='radio'],
+input[type='checkbox'],
+input[type='date'],
+select {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.rules {
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+button:hover {
+  background: #45a049;
+}

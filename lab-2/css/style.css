@@ -17,3 +17,9 @@ a {
 a:hover {
   text-decoration: underline; /* podkreślenie przy najechaniu */
 }
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

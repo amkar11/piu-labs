@@ -1,1 +1,190 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uwagi</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="uwagiBody">
+    <div class="containerImageText">
+      <div class="top-center">
+        <h1>Moje uwagi dotyczące formularzy w HTML</h1>
+      </div>
+    </div>
+    <div class="mainTextContainer">
+      <h1 id="mainHeader">
+        Formy w HTML to standardowy sposób do zbierania danych użytkowników i
+        przesyłania ich do serwera
+      </h1>
+      <p>
+        Formę HTML tworzy się za pomocą elementa
+        <span class="terms">&lt;form&gt;</span>, i zazwyczaj zawiera kontrolki
+        input takie jak:
+      </p>
+      <ul class="uwagiUL">
+        <li>
+          <span class="terms">&lt;input&gt;</span> (text, password, email,
+          checkbox, radio, file, etc.)
+        </li>
+        <li><span class="terms">&lt;textarea&gt;</span></li>
+        <li><span class="terms">&lt;select&gt;</span></li>
+        <li><span class="terms">&lt;button&gt;</span></li>
+      </ul>
+      <p>Na przykład:</p>
+      <pre>
+        <code>
+          &lt;<span class="tag">form</span><span class="attribute"> action</span>=<span class="value">"/login"</span> <span class="attribute">method</span>=<span class="value">"post"&gt;</span>
+            &lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">name</span>=<span class="value">"email"</span> <span class="attribute">required</span>&gt;
+            &lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="value">"password"</span> <span class="attribute">name</span>=<span class="value">"password"</span> <span class="attribute">required</span>&gt;
+            &lt;<span class="tag">button</span> <span class="attribute">type</span>=<span class="value">"submit"</span>&gt;Login&lt;/<span class="tag">button</span>&gt;
+          &lt;/<span class="tag">form</span>&gt;
+        </code>
+      </pre>
+      <p>
+        W czasie gdy użytkownik naciska na klawisz "Submit" konwertuje dane w
+        JSON i browser przesyła dane do serwera przez HTTP.
+      </p>
 
+      <!-- Kiedy należy używać HTML formularzy -->
+      <h3>Kiedy należy używać HTML formularzy?</h3>
+      <ol>
+        <li><h4>Zbieranie danych użytkowników</h4></li>
+        <p>
+          Formularze są najlepszym wyborem kiedy zapada potrzeba zbierania
+          danych użytkowników:
+        </p>
+        <ul class="uwagiUL">
+          <li>Logowanie / Rejestracja</li>
+          <li>Formularze kontaktowe</li>
+          <li>Pola wyszukiwania</li>
+          <li>Strony płatności</li>
+          <li>Ustawienia konta</li>
+          <li>Komunikacja zwrotna / sondaże</li>
+        </ul>
+        <li><h4>Wysyłanie danych do serwera</h4></li>
+        <p>Formy są idealne do:</p>
+        <ul class="uwagiUL">
+          <li>
+            Przesyłania danych do serwera za pomocą <b>GET</b> i <b>POST</b>
+          </li>
+          <li>Natywnego zachowywania przesyłania</li>
+          <li>Kompatybilności bez JavaScript`u</li>
+        </ul>
+        <p>Przykład:</p>
+        <pre>
+          <code>
+            &lt;<span class="tag">form</span> <span class="attribute">method</span>=<span class="value">"get"</span> <span class="attribute">action</span>=<span class="value">"/search"</span>&gt;
+              &lt;<span class="tag">input</span> <span class="attribute">name</span>=<span class="value">"q"</span>&gt;
+            &lt;/<span class="tag">form</span>&gt;
+          </code>
+        </pre>
+        <li>
+          <h4>Kiedy dostępność <i>(ang. accessibility)</i> ma znaczenie</h4>
+        </li>
+        <p>HTML formularze:</p>
+        <ul class="uwagiUL">
+          <li>
+            Mają do czynienia z czytnikami ekranowymi
+            <i>(ang. screen readers)</i>
+          </li>
+          <li>Wspierają nawigację przez klawiaturę</li>
+          <li>
+            Pozwalają na labels
+            <span class="inlineCode"
+              >(&lt;<span class="tag">label</span>
+              <span class="attribute">for</span>=<span class="value">""</span
+              >&gt;)</span
+            >
+          </li>
+          <li>Zapewniają natywną informację zwrotną o błędach</li>
+        </ul>
+        <li>Wbudowana walidacja</li>
+        <p>HTML5 oferuje wbudowaną walidacje:</p>
+        <pre>
+          <code>
+            &lt;<span class="tag">input</span> <span class="attribute">type</span>=<span class="value">"email"</span> <span class="attribute">required</span> <span class="attribute">minlength</span>=<span class="value">"5"</span>&gt;
+        </code>
+      </pre>
+        <p>Korzyści</p>
+        <ul class="uwagiUL">
+          <li>Nie ma potrzeby w JavaScripcie</li>
+          <li>
+            Spójne doświadczenie użytkowania <i>(ang. User Experience - UX)</i>
+          </li>
+          <li>Mniej kodu</li>
+        </ul>
+      </ol>
+
+      <!-- Kiedy nie należy używać HTML formularzy -->
+      <h3>Kiedy nie należy używać HTML formularzy?</h3>
+      <ol>
+        <li>
+          <h4>Kiedy nie ma potrzeby wprowadzenia danych od użytkowika</h4>
+          <p><b>Nie</b> należy używać formularzy do:</p>
+          <ul class="uwagiUL">
+            <li>Menu nawigacyjnych</li>
+            <li>Layout`u</li>
+            <li>Przecisków, które nie przesyłają danych</li>
+          </ul>
+          <pre>
+            <code>
+
+          </code>
+        </pre>
+        </li>
+        <li>
+          <h4>Podczas wykonywania czynności wyłącznie dla klienta</h4>
+          <p>Jeżeli czynność:</p>
+          <ul class="uwagiUL">
+            <li>Nie przesyład danych</li>
+            <li>Przełacza tylko stan UI</li>
+            <li>Otwiera okna modalne</li>
+            <li>Wywoła animacje</li>
+          </ul>
+          <p>Do tego trzeba wykorzystać przyciski i JavaScript</p>
+          <pre>
+            <code>
+
+            </code>
+          </pre>
+        </li>
+        <li>
+          <h4>
+            W przypdaku korzystania z nowoczesnych API z pełną kontorlą JS
+          </h4>
+          <p>Jeżeli aplikacja:</p>
+          <ul class="uwagiUL">
+            <li>Używa Fetch API lub Axios do przesyłania danych</li>
+            <li>Przesyła tylko JSON</li>
+            <li>Posiada pełną logikę SPA (React, Angular, Vue)</li>
+          </ul>
+          <p>
+            W takich przypdkach można uniknąć przesyłania formularzy natywnych,
+            lecz i nadal zachować &lt;form&gt; ze względów semantycznych
+          </p>
+          <p>Typowy wzór SPA:</p>
+          <pre>
+            <code>
+
+          </code>
+        </pre>
+          <p>Zapobiega domyślnemu przesyłaniu, lecz zachowuje dostępność</p>
+        </li>
+        <li>
+          <h4>W przypdaku niewłaściwego użycia formularzy do stylizacji</h4>
+          <p>Formularze nigdy nie powinny być używane:</p>
+          <ul class="uwagiUL">
+            <li>Jako kontenery do layout`u CSS</li>
+            <li>Do grupowania elementów wizualnie</li>
+          </ul>
+          <p>Zamiast tego należy używać</p>
+          <ul>
+            <li>&lt;div&gt;</li>
+            <li>&lt;section&gt;</li>
+            <li>&lt;fieldset&gt; (tylko formularzy wewnętrzne)</li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
