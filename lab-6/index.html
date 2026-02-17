@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab - 6</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/ajax.js"></script>
+    <script type="module" src="./js/app.js"></script>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="forms-container">
+        <div class="select">
+          <label for="http-method">Select HTTP method:</label>
+          <select name="http-method" id="http-select">
+            <option value="get" selected>GET</option>
+            <option value="post">POST</option>
+            <option value="put">PUT</option>
+            <option value="delete">DELETE</option>
+          </select>
+        </div>
+        <div class="select">
+          <label for="endpoint-method">Select data you want to get:</label>
+          <select name="endpoint-method" id="endpoint-select">
+            <option value="posts" selected>Posts</option>
+            <option value="comments">Comments</option>
+            <option value="albums">Albums</option>
+            <option value="photos">Photos</option>
+            <option value="todos">Todos</option>
+            <option value="users">Users</option>
+          </select>
+        </div>
+        <div class="select">
+          <label for="timeout-input">Enter timeout (in seconds)</label>
+          <input
+            type="number"
+            name="timeout-input"
+            id="timeout-input"
+            placeholder="10 (seconds) for example"
+            min="0"
+            max="60"
+          />
+        </div>
+      </div>
+      <div class="buttons-container">
+        <button type="button" id="success-button">
+          Send successfull request
+        </button>
+        <button type="button" id="error-button">Send error request</button>
+        <button type="button" id="refresh-button">Refresh view</button>
+      </div>
+    </div>
+    <div class="fetch-results">
+      <!-- <div class="fetch-results-card">
+        <p>Resource ID:</p>
+        <p>User ID:</p>
+        <p>Title:</p>
+        <p>Body:</p>
+      </div> -->
+    </div>
+    <div class="error-popup"></div>
+  </body>
+</html>
