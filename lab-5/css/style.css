@@ -100,3 +100,21 @@ button:nth-child(3) {
   align-items: center;
   margin: 0 auto;
 }
+
+body.brush-mode {
+  cursor:
+    url('../media/paint-brush-2.svg') 0 0,
+    auto;
+}
+
+body.brush-mode .square,
+body.brush-mode .circle {
+  cursor:
+    url('../media/paint-brush-2.svg') 0 0,
+    auto;
+}
+
+body:not(.brush-mode) .square,
+body:not(.brush-mode) .circle {
+  cursor: pointer;
+}

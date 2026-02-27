@@ -1,4 +1,5 @@
 import { store } from './store.js';
+import pickColor from './helpers.js';
 
 class userInterface {
     #gridContainer = null;
@@ -9,9 +10,27 @@ class userInterface {
         console.log('Grid container: ' + this.#gridContainer);
     }
 
-    changeCursor() {
-        document.body.style.cursor =
-            "url('./media/paint-brush-2.svg') 0 0, auto";
+    changeCursor(exit = false) {
+        if (exit) {
+            document.body.classList.remove('brush-mode');
+            store.brushActive = false;
+        } else {
+            document.body.classList.add('brush-mode');
+            store.brushActive = true;
+        }
+
+        const event = new MouseEvent('mouseout', {
+            bubbles: true,
+            cancelable: true,
+            clientX: 0,
+            clientY: 0,
+        });
+        document.dispatchEvent(event);
+    }
+
+    pickShapeColor(element) {
+        element.style.backgroundColor = pickColor();
+        store.changeColor(element, getComputedStyle(element).backgroundColor);
     }
 
     updateCounters(shapesList) {
@@ -46,10 +65,10 @@ class userInterface {
     displaySavedData() {
         if (store.savedCounters !== null && store.savedData !== null) {
             document.querySelector('h3:nth-child(1)').textContent =
-                'Circles: ' + savedCounters.circles;
+                'Circles: ' + store.savedCounters.circles;
             document.querySelector('h3:nth-child(2)').textContent =
-                'Squares: ' + savedCounters.squares;
-
+                'Squares: ' + store.savedCounters.squares;
+            console.log('displaySavedData fired');
             for (const shape of store.savedData) {
                 this.addElement(shape.class, shape.color);
             }
